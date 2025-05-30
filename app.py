@@ -1045,17 +1045,3 @@ def index():
 
 if __name__ == '__main__':
     app.run(debug=True)
-🔑 Cambios clave:
-✅ Usamos:
-
-axis_range = [-150, 150]
-para X, Y y Z.
-✅ Esto asegura que la escala de los ejes sea idéntica y facilita la visualización y comparación.
-
-¿Quieres ajustar el rango a otro valor o agregar otra funcionalidad como un control deslizante? 🚀
-
-
-
-
-Ninguno archivo selec.Ninguno archivo selec.
-ChatGPT puede cometer errores. Comprueba la información importante.
