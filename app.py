@@ -42,9 +42,9 @@ def index():
                         if len(parts) >= 8:
                             try:
                                 symbol = parts[2][0]  # Primer carácter del nombre atómico
-                                x_coord = float(parts[5])
-                                y_coord = float(parts[6])
-                                z_coord = float(parts[7])
+                                x_coord = float(parts[6])
+                                y_coord = float(parts[7])
+                                z_coord = float(parts[8])
 
                                 # Asigna color y tamaño
                                 color = color_map.get(symbol, 'violet')
