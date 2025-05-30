@@ -58,6 +58,12 @@ def index():
                             except ValueError:
                                 continue
 
+            # Calcular el rango total para centrar la cámara
+            min_x, max_x = min(x), max(x)
+            min_y, max_y = min(y), max(y)
+            min_z, max_z = min(z), max(z)
+            range_padding = 10  # para que no quede muy justo
+
             fig = go.Figure(data=[go.Scatter3d(
                 x=x,
                 y=y,
@@ -72,15 +78,39 @@ def index():
 
             fig.update_layout(
                 scene=dict(
-                    xaxis_title='X',
-                    yaxis_title='Y',
-                    zaxis_title='Z',
+                    xaxis=dict(
+                        title='X',
+                        backgroundcolor='black',
+                        gridcolor='white',
+                        showbackground=True,
+                        zerolinecolor='white',
+                        range=[min_x - range_padding, max_x + range_padding]
+                    ),
+                    yaxis=dict(
+                        title='Y',
+                        backgroundcolor='black',
+                        gridcolor='white',
+                        showbackground=True,
+                        zerolinecolor='white',
+                        range=[min_y - range_padding, max_y + range_padding]
+                    ),
+                    zaxis=dict(
+                        title='Z',
+                        backgroundcolor='black',
+                        gridcolor='white',
+                        showbackground=True,
+                        zerolinecolor='white',
+                        range=[min_z - range_padding, max_z + range_padding]
+                    ),
                     bgcolor='black'
                 ),
                 paper_bgcolor='black',
                 plot_bgcolor='black',
                 title=dict(text='Átomos en 3D', font=dict(color='white')),
-                font=dict(color='white')
+                font=dict(color='white'),
+                margin=dict(l=0, r=0, b=0, t=50),
+                width=1000,
+                height=800
             )
 
             graph_html = pio.to_html(fig, full_html=False)
