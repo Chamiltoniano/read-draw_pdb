@@ -63,6 +63,7 @@ def index():
             min_y, max_y = min(y), max(y)
             min_z, max_z = min(z), max(z)
             range_padding = 10  # para que no quede muy justo
+            axis_range = [-150, 150]
 
             fig = go.Figure(data=[go.Scatter3d(
                 x=x,
