@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Graficar archivo PDB</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        #plot {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sube un archivo PDB y visualiza las coordenadas en 3D</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".pdb" required>
+        <button type="submit">Cargar y Graficar</button>
+    </form>
+    <div id="plot">
+        {% if graph_html %}
+            {{ graph_html|safe }}
+        {% endif %}
+    </div>
+</body>
+</html>

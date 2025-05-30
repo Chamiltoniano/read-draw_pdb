@@ -1,2 +1,4 @@
 flask
+plotly
+pandas
 gunicorn
